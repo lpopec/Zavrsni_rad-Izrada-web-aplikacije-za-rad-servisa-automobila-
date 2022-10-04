@@ -1,0 +1,27 @@
+﻿@page
+@model Auto_Servis.Pages.Dijelovi.UpisDijelovaModel
+@{
+}
+
+<h1>Upis dijelova</h1>
+
+@if (Model.errorMessage.Length > 0)
+{
+    <div class="alert alert-warning alert-dismissible fade show " role="alert">
+        <strong>@Model.errorMessage</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+<form method="post">
+    <label for="Šifra_dijela">Šifra dijela:</label><br>
+    <input type="text" id="Šifra_dijela" name="Šifra_dijela"><br/>
+    <label for="Naziv_dijela">Naziv:</label><br>
+    <input type="text" id="Naziv_dijela" name="Naziv_dijela"><br/>
+    <label for="Količina">Količina:</label><br>
+    <input type="text" id="Količina" name="Količina"><br/>
+    <label for="Cijena">Cijena:</label><br>
+    <input type="text" id="Cijena" name="Cijena"><br/>
+
+    <input type="submit" value="Submit">
+</form>

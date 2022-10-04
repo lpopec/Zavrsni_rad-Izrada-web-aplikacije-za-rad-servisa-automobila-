@@ -1,0 +1,41 @@
+﻿@media print {
+    #GumbZaIspis{
+        display: none;
+    }
+}
+
+@page {
+    size: auto;
+    margin: 0;
+}
+
+.tablica {
+     width: 300px;
+     border: 1px solid;
+     border-collapse: collapse;
+     border-color: black;
+     text-align: center;
+     font-family: Arial;
+     font-size: 12px;
+     padding: 10px;
+ }
+
+.šifra_radnog_naloga {
+     text-align: left;
+     font-family: Arial;
+     font-size: 15px;
+}
+
+.opis_naloga {
+    max-width: 33%;
+    text-align: left;
+    font-family: Arial;
+    font-size: 15px;
+}
+
+.napomena {
+    max-width: 33%;
+    text-align: left;
+    font-family: Arial;
+    font-size: 15px;
+}

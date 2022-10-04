@@ -1,0 +1,29 @@
+﻿@page
+@model Auto_Servis.Pages.Vlasnici.UrediVlasnikaModel
+@{
+}
+<h1>Uredi Vlasnika</h1>
+
+@if (Model.errorMessage.Length > 0)
+{
+    <div class="alert alert-warning alert-dismissible fade show " role="alert">
+        <strong>@Model.errorMessage</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+<form method="post">
+    <input type="hidden" name="ID" id="ID" value="@Model.infoVlasnika.ID" />
+    <label for="OIB_vlasnika">OIB vlasnika:</label><br>
+    <input type="text" id="OIB_vlasnika" name="OIB_Vlasnika" value="@Model.infoVlasnika.OIB_vlasnika"><br/>
+    <label for="Ime_vlasnika">Ime vlasnika:</label><br>
+    <input type="text" id="Ime_vlasnika" name="Ime_vlasnika" value="@Model.infoVlasnika.Ime"><br/>
+    <label for="Prezime_vlasnika">Prezime Vlasnika:</label><br>
+    <input type="text" id="Prezime_vlasnika" name="Prezime_vlasnika" value="@Model.infoVlasnika.Prezime"><br/>
+    <label for="broj_telefona">Broj telefona:</label><br>
+    <input type="text" id="broj_telefona" name="broj_telefona" value="@Model.infoVlasnika.Broj_telefona"><br/>
+    <label for="Adresa">Adresa:</label><br>
+    <input type="text" id="Adresa" name="Adresa" value="@Model.infoVlasnika.Adresa"><br/><br/>
+
+    <input type="submit" value="Submit">
+</form>

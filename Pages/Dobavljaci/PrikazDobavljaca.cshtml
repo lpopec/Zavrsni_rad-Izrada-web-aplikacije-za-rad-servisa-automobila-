@@ -1,0 +1,36 @@
+﻿@page
+@model Auto_Servis.Pages.Dobavljaci.PrikazDobavljacaModel
+@{
+}
+
+<h1>Pregled dobavljača</h1>
+<br/>
+<a class="btn btn-primary btn-sm" href="/Dobavljaci/UnosDobavljaca">Dodavanje novog dobavljača</a><br/>
+<br />
+<table>
+    <thead>
+        <th style="display:none;">ID</th >
+        <th>Šifra dobavljača</th>
+        <th>Naziv</th>
+        <th>Adresa</th>
+        <th>Broj telefona</th>
+        <th>Web stranica</th>
+    </thead>
+    <tbody>
+    @foreach (var dobavljac in Model.ListaDobavljaca)
+    {
+        <tr>
+            <td style="display:none;">@dobavljac.ID</td>
+            <td>@dobavljac.Šifra_dobavljača</td>
+            <td>@dobavljac.Naziv</td>
+            <td>@dobavljac.Adresa</td>
+            <td>@dobavljac.Broj_telefona</td>
+            <td><a href="@dobavljac.Web_stranica">@dobavljac.Web_stranica</a></td>
+            <td>
+                <a class="btn btn-primary btn-sm" href="/Dobavljaci/UrediDobavljaca?id=@dobavljac.ID">Uredi</a>
+                <a class="btn btn-primary btn-sm" href="/Dobavljaci/IzbrisiDobavljaca?id=@dobavljac.ID">Obriši</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

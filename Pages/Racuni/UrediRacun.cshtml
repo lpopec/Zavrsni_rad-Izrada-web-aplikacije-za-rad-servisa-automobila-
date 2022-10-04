@@ -1,0 +1,40 @@
+﻿@page
+@model Auto_Servis.Pages.Racuni.UrediRacunModel
+@{
+}
+<h1>Uređivanje računa</h1>
+
+@if (Model.errorMessage.Length > 0)
+{
+    <div class="alert alert-warning alert-dismissible fade show " role="alert">
+        <strong>@Model.errorMessage</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+<form method="post">
+    <input type="hidden" name="ID" id="ID" value="@Model.infoRacuna.ID" />
+
+    <label for="Šifra_racuna">Šifra računa:</label><br>
+    <input type="text" id="Šifra_racuna" name="Šifra_racuna" value="@Model.infoRacuna.Šifra_racuna"><br/>
+
+    <label for="Naziv">Naziv računa:</label><br>
+    <input type="text" id="Naziv" name="Naziv" value="@Model.infoRacuna.Naziv"><br/>
+    
+    <label for="Opis">Opis:</label><br>
+    <textarea id="Opis" name="Opis" rows="5" cols="50" maxlength="255">@Model.infoRacuna.Opis</textarea><br/>
+    
+    <label for="Materijal">Korišteni materijal i dijelovi:</label><br>
+    <textarea id="Materijal" name="Materijal" rows="5" cols="50" maxlength="255">@Model.infoRacuna.Korišteni_materijal</textarea><br/>
+    
+    <label for="Cijena_materijala">Cijena dijelova i materijal:</label><br>
+    <input type="text" id="Cijena_materijala" name="Cijena_materijala" value="@Model.infoRacuna.Cijena_dijelova"><br/>
+    
+    <label for="pdv">PDV(%):</label><br>
+    <input type="text" id="pdv" name="pdv" value="@Model.infoRacuna.pdv_postotak"><br/>
+    
+    <label for="OIB_vlasnika">OIB vlasnika:</label><br>
+    <input type="text" id="OIB_vlasnika" name="OIB_vlasnika" value="@Model.infoRacuna.OIB_vlasnika"><br/>
+    
+    <input type="submit" value="Submit">
+</form>

@@ -1,0 +1,37 @@
+﻿@page
+@model Auto_Servis.Pages.Racuni.IspisRacunaModel
+@{
+   Layout = "_LayoutRacun";
+}
+<h1>RAČUN</h1>
+
+<p class="servis">@Model.infoRacuna.Naziv_servisa</p>
+
+<p class="šifra">Šifra radnog naloga: @Model.infoRacuna.Šifra_racuna</p>
+
+<table class="tablica">
+    <thead>
+        <th class="tablica">Ime i prezime vlasnika</th>
+        <th class="tablica">Ukupna cijena</th>
+        <th class="tablica">PDV</th>
+    </thead>
+    <tbody>
+        <td class="tablica">@Model.infoRacuna.Ime_prezime_vlasnika</td>
+        <td class="tablica">@Model.infoRacuna.Ukupna_cijena</td>
+        <td class="tablica">@Model.infoRacuna.pdv %</td>        
+    </tbody>
+</table>
+
+<div class="opis">
+    <h3>Opis računa:</h3>
+    <p id="opis">@Model.infoRacuna.Opis</p>
+</div>
+<div class="materijal">
+    <h3>Korišteni materijal i dijelovi</h3>
+    <p id="materijal">@Model.infoRacuna.Korišteni_materijal</p>
+</div>
+<div>
+    <p id="cijena">Ukupna cijena korištenog materijala i dijelova: @Model.infoRacuna.Cijena_dijelova</p>
+</div>
+
+<input type=button name="ispis" id="GumbZaIspis" value="Ispis" onclick="window.print()">

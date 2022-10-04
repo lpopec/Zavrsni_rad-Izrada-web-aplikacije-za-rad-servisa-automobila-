@@ -1,0 +1,40 @@
+﻿@page
+@model Auto_Servis.Pages.Radni_nalozi.UrediRadniNalogModel
+@{
+}
+<h1>Uređivanje radnog naloga</h1>
+
+@if (Model.errorMessage.Length > 0)
+{
+    <div class="alert alert-warning alert-dismissible fade show " role="alert">
+        <strong>@Model.errorMessage</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+<form method="post">
+    <input type="hidden" name="ID" id="ID" value="@Model.infoNaloga.ID" />
+    <label for="Šifra_radnog_naloga">Šifra radnog naloga:</label><br>
+    <input type="text" id="Šifra_radnog_naloga" name="Šifra_radnog_naloga" value="@Model.infoNaloga.Šifra_radnog_naloga"><br/>
+    <label for="Opis">Opis:</label><br>
+    <textarea id="Napomena" name="Napomena" rows="5" cols="50" maxlength="255">@Model.infoNaloga.Napomena</textarea><br/>
+    <label for="Materijal">Utrošeni materijal:</label><br>
+    <textarea id="Materijal" name="Materijal" rows="5" cols="50" maxlength="255">@Model.infoNaloga.Materijal</textarea><br/>
+    <label for="Opis">Opis:</label><br>
+    <textarea id="Opis" name="Opis" rows="5" cols="50" maxlength="255">@Model.infoNaloga.Opis</textarea><br/>
+    <label for="Predviđeno_vrijeme_izvršavanja">Predviđeno vrijeme izvršavanja:</label><br>
+    <input type="text" id="Predviđeno_vrijeme_izvršavanja" name="Predviđeno_vrijeme_izvršavanja" value="@Model.infoNaloga.Predviđeno_vrijeme"><br/>
+    <label for="OIB_radnika">OIB radnika:</label><br>
+    <input type="text" id="OIB_radnika" name="OIB_radnika" value="@Model.infoNaloga.OIB_radnika"><br/>
+    <label for="Broj_šasije">Broj šasije vozila:</label><br>
+    <input type="text" id="Broj_šasije" name="Broj_šasije" value="@Model.infoNaloga.Broj_šasije"><br/>
+
+    @if (Model.successMessage.Length > 0)
+    {
+        <div class="alert alert-success alert-dismissible fade show " role="alert">
+            <strong>@Model.successMessage</strong>
+             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+    <input type="submit" value="Submit">
+</form>

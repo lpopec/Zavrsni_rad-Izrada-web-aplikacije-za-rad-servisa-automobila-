@@ -1,0 +1,36 @@
+﻿@page
+@model Auto_Servis.Pages.Vlasnici.PregledVlasnikaModel
+@{
+}
+
+<h1>Pregled vlasnika vozila</h1>
+<br/>
+<a class="btn btn-primary btn-sm" href="/Vlasnici/UpisVlasnika">Dodavanje novog vlasnika</a><br/>
+<br />
+<table>
+    <thead>
+        <th style="display:none;">ID</th >
+        <th>OIB Vlasnika</th>
+        <th>Ime</th>
+        <th>Prezime</th>
+        <th>Broj telefona</th>
+        <th>Adresa</th>
+    </thead>
+    <tbody>
+    @foreach (var vlasnika in Model.ListaVlasnika)
+    {
+        <tr>
+            <td style="display:none;">@vlasnika.ID</td>
+            <td>@vlasnika.OIB_vlasnika</td>
+            <td>@vlasnika.Ime</td>
+            <td>@vlasnika.Prezime</td>
+            <td>@vlasnika.Broj_telefona</td>
+            <td>@vlasnika.Adresa</td>
+            <td>
+                <a class="btn btn-primary btn-sm" href="/Vlasnici/UrediVlasnika?id=@vlasnika.ID">Uredi</a>
+                <a class="btn btn-primary btn-sm" href="/Vlasnici/ObrišiVlasnika?id=@vlasnika.ID">Obriši</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

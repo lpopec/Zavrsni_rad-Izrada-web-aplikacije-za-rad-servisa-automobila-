@@ -1,0 +1,47 @@
+﻿@page
+@model Auto_Servis.Pages.Računi.PrikazRacunaModel
+@{
+}
+
+<h1>Pregled računa</h1>
+<br/>
+<a class="btn btn-primary btn-sm" href="/Racuni/UnosRacuna">Unos racuna</a><br/>
+<br />
+<table>
+    <thead>
+        <th style="display:none;">ID</th >
+        <th>Šifra računa</th>
+        <th>Naziv</th>
+        <th>Opis</th>
+        <th>Korišteni materijal</th>
+        <th>Ukupna cijena</th>
+        <th>Cijena dijelova</th>
+        <th>PDV</th>
+        <th>Datum unosa</th>
+        <th>Ime i prezime vlasnika</th>
+        <th>Naziv servisa</th>
+    </thead>
+    <tbody>
+    @foreach (var racun in Model.ListaRacuna)
+    {
+        <tr>
+            <th style="display:none;">@racun.ID</th >
+            <td>@racun.Šifra_racuna</td>
+            <td>@racun.Naziv</td>
+            <td>@racun.Opis</td>
+            <td>@racun.Korišteni_materijal</td>
+            <td>@racun.Ukupna_cijena</td>
+            <td>@racun.Cijena_dijelova</td>
+            <td>@racun.pdv</td>
+            <td>@racun.Datum_unosa</td>
+            <td>@racun.Ime_prezime_vlasnika</td>
+            <td>@racun.Naziv_servisa</td>
+            <td>
+                <a class="btn btn-primary btn-sm" href="/Racuni/UrediRacun?id=@racun.ID">Uredi</a>
+                <a class="btn btn-primary btn-sm" href="/Racuni/BrisanjeRacuna?id=@racun.ID">Obriši</a>
+                <a class="btn btn-primary btn-sm" href="/Racuni/IspisRacuna?id=@racun.ID">Ispis</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

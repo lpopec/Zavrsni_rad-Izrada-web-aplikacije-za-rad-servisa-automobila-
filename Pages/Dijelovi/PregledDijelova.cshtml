@@ -1,0 +1,36 @@
+﻿@page
+@model Auto_Servis.Pages.Dijelovi.PregledDijelovaModel
+@{
+}
+
+<h1>Pregled dijelova na skladištu</h1>
+<br/>
+<a class="btn btn-primary btn-sm" href="/Dijelovi/UpisDijelova">Dodavanje novog dijela</a><br/>
+<br />
+<table>
+    <thead>
+        <th style="display:none;">ID</th >
+        <th>Šifra dijela</th>
+        <th>Naziv</th>
+        <th>Količina</th>
+        <th>Cijena</th>
+        <th>Naziv skladišta</th>
+    </thead>
+    <tbody>
+    @foreach (var dio in Model.ListaDijelova)
+    {
+        <tr>
+            <td style="display:none;">@dio.ID</td>
+            <td>@dio.Šifra_dijela</td>
+            <td>@dio.Naziv</td>
+            <td>@dio.Količina</td>
+            <td>@dio.Cijena</td>
+            <td>@dio.Naziv_skladišta</td>
+            <td>
+                <a class="btn btn-primary btn-sm" href="/Dijelovi/UrediDio?id=@dio.ID">Uredi</a>
+                <a class="btn btn-primary btn-sm" href="/Dijelovi/ObrišiDio?id=@dio.ID">Obriši</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

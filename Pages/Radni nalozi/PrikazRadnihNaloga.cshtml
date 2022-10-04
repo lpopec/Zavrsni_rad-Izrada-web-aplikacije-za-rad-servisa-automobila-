@@ -1,0 +1,42 @@
+﻿@page
+@model Auto_Servis.Pages.Radni_nalozi.PrikazRadnihNalogaModel
+@{
+}
+
+<h1>Pregled vlasnika vozila</h1>
+<br/>
+<a class="btn btn-primary btn-sm" href="/Radni nalozi/UnosRadnogNaloga">Unos radnog naloga</a><br/>
+<br />
+<table>
+    <thead>
+        <th style="display:none;">ID</th >
+        <th>Šifra radnog naloga</th>
+        <th>Opis</th>
+        <th>Napomena</th>
+        <th>Utrošeni materijal</th>
+        <th>Predviđeno vrijeme izvršavanja</th>
+        <th>Ime i prezime radnika</th>
+        <th>Broj šasije vozila</th>
+    </thead>
+    <tbody>
+    @foreach (var nalog in Model.ListaNaloga)
+    {
+        <tr>
+            <td style="display:none;">@nalog.ID</td>
+            <td>@nalog.Šifra_radnog_naloga</td>
+            <td>@nalog.Opis</td>
+            <td>@nalog.Napomena</td>
+            <td>@nalog.Materijal</td>
+            <td>@nalog.Predviđeno_vrijeme</td>
+            <td>@nalog.Ime_Prezime_Radnika</td>
+            <td>@nalog.Broj_šasije</td>
+
+            <td>
+                <a class="btn btn-primary btn-sm" href="/Radni nalozi/UrediRadniNalog?id=@nalog.ID">Uredi</a>
+                <a class="btn btn-primary btn-sm" href="/Radni nalozi/BrisanjeRadnogNaloga?id=@nalog.ID">Obriši</a>
+                <a class="btn btn-primary btn-sm" href="/Radni nalozi/IspisRadnogNaloga?id=@nalog.ID">Ispis</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

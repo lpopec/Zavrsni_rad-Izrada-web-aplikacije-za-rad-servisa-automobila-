@@ -1,0 +1,39 @@
+﻿@page
+@model Auto_Servis.Pages.Vozila.IspisVozilaModel
+@{
+}
+<h1>Pregled vozila</h1>
+<br/>
+<a class="btn btn-primary btn-sm" href="/Vozila/DodajVozilo">Dodavanje novog vozila</a><br/>
+<br />
+<table>
+    <thead>
+        <th style="display:none;">ID</th >
+        <th>Broj šasije</th>
+        <th>Registarska oznaka</th>
+        <th>Naziv/Model automobila</th>
+        <th>Boja</th>
+        <th>OIB vlasnika</th>
+        <th>Ime i prezime vlasnika</th>
+        <th>Broj telefona vlasnika</th>
+    </thead>
+    <tbody>
+    @foreach (var vozilo in Model.ListaVozila)
+    {
+        <tr>
+            <td style="display:none;">@vozilo.ID</td>
+            <td>@vozilo.Broj_šasije</td>
+            <td>@vozilo.Registarska_oznaka</td>
+            <td>@vozilo.Naziv</td>
+            <td>@vozilo.Boja</td>
+            <td>@vozilo.OIB_vlasnika</td>
+            <td>@vozilo.Ime_prezime_vlasnika</td>
+            <td>@vozilo.Broj_telefona_vlasnika</td>
+            <td>
+                <a class="btn btn-primary btn-sm" href="/Vozila/UrediPodatkeVozila?id=@vozilo.ID">Uredi</a>
+                <a class="btn btn-primary btn-sm" href="/Vozila/ObrišiVozilo?id=@vozilo.ID">Obriši</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

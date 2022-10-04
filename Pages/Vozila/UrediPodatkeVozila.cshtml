@@ -1,0 +1,37 @@
+﻿@page
+@model Auto_Servis.Pages.Vozila.UrediPodatkeVozilaModel
+@{
+}
+<h1>Uredi Vlasnika</h1>
+
+@if (Model.errorMessage.Length > 0)
+{
+    <div class="alert alert-warning alert-dismissible fade show " role="alert">
+        <strong>@Model.errorMessage</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+<form method="post">
+    <input type="hidden" name="ID" id="ID" value="@Model.infoVozila.ID" />
+    <label for="Broj_šasije">Broj šasije:</label><br>
+    <input type="text" id="Broj_šasije" name="Broj_šasije" value="@Model.infoVozila.Broj_šasije"><br/>
+    <label for="Registarska_oznaka">Registarska oznaka:</label><br>
+    <input type="text" id="Registarska_oznaka" name="Registarska_oznaka" value="@Model.infoVozila.Registarska_oznaka"><br/>
+    <label for="Naziv">Naziv:</label><br>
+    <input type="text" id="Naziv" name="Naziv" value="@Model.infoVozila.Naziv"><br/>
+    <label for="Boja">Boja:</label><br>
+    <input type="text" id="Boja" name="Boja" value="@Model.infoVozila.Boja"><br/>
+
+    @if (Model.successMessage.Length > 0)
+    {
+        <div class="alert alert-success alert-dismissible fade show " role="alert">
+            <strong>@Model.successMessage</strong>
+             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    <input type="submit" value="Submit">
+</form>
+
+

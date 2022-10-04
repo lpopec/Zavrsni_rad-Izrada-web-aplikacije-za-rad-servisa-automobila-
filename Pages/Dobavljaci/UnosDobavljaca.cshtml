@@ -1,0 +1,32 @@
+﻿@page
+@model Auto_Servis.Pages.Dobavljaci.UnosDobavljacaModel
+@{
+}
+<h1>Unos dobavljača</h1>
+
+@if (Model.errorMessage.Length > 0)
+{
+    <div class="alert alert-warning alert-dismissible fade show " role="alert">
+        <strong>@Model.errorMessage</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+<form method="post">
+    <label for="Šifra_dobavljaca">Šifra dobavljača:</label><br>
+    <input type="text" id="Šifra_dobavljaca" name="Šifra_dobavljaca"><br/>
+
+    <label for="Naziv_dobavljaca">Naziv dobavljača:</label><br>
+    <input type="text" id="Naziv_dobavljaca" name="Naziv_dobavljaca"><br/>
+
+    <label for="Broj_telefona">Broj telefona:</label><br>
+    <input type="text" id="Broj_telefona" name="Broj_telefona"><br/>
+
+    <label for="Adresa">Adresa:</label><br>
+    <input type="text" id="Adresa" name="Adresa"><br/>
+
+    <label for="Web_stranica">Web_stranica:</label><br>
+    <input type="Web_stranica" id="Adresa" name="Web_stranica"><br/><br/>
+
+    <input type="submit" value="Submit">
+</form>

@@ -1,0 +1,27 @@
+﻿@page
+@model Auto_Servis.Pages.Dijelovi.UrediDioModel
+@{
+}
+<h1>Uredi podatke dijela</h1>
+
+@if (Model.errorMessage.Length > 0)
+{
+    <div class="alert alert-warning alert-dismissible fade show " role="alert">
+        <strong>@Model.errorMessage</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+<form method="post">
+    <input type="hidden" name="ID" id="ID" value="@Model.infoDijela.ID" />
+    <label for="Šifra_dijela">Šifra dijela:</label><br>
+    <input type="text" id="Šifra_dijela" name="Šifra_dijela" value="@Model.infoDijela.Šifra_dijela"><br/>
+    <label for="Naziv">Naziv:</label><br>
+    <input type="text" id="Naziv" name="Naziv" value="@Model.infoDijela.Naziv"><br/>
+    <label for="Količina">Prezime Vlasnika:</label><br>
+    <input type="text" id="Količina" name="Količina" value="@Model.infoDijela.Količina"><br/>
+    <label for="Cijena">Cijena:</label><br>
+    <input type="text" id="Cijena" name="Cijena" value="@Model.infoDijela.Cijena"><br/>
+
+    <input type="submit" value="Submit">
+</form>

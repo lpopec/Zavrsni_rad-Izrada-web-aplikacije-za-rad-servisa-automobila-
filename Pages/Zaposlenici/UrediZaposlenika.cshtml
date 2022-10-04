@@ -1,0 +1,37 @@
+﻿@page
+@model Auto_Servis.Pages.Zaposlenici.UrediZaposlenikaModel
+@{
+}
+<h1>Uredi zaposlenika</h1>
+
+@if (Model.errorMessage.Length > 0)
+{
+    <div class="alert alert-warning alert-dismissible fade show " role="alert">
+        <strong>@Model.errorMessage</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+<form method="post">
+    <input type="hidden" name="ID" id="ID" value="@Model.infoZaposlenika.ID" />
+    <label for="OIB_zaposlenika">OIB zaposlenika:</label><br>
+    <input type="text" id="OIB_zaposlenika" name="OIB_zaposlenika" value="@Model.infoZaposlenika.OIB_zaposlenika"><br/>
+    <label for="Ime">Ime zaposlenika:</label><br>
+    <input type="text" id="Ime" name="Ime" value="@Model.infoZaposlenika.Ime"><br/>
+    <label for="Prezime_zaposlenika">Prezime zaposlenika:</label><br>
+    <input type="text" id="Prezime" name="Prezime" value="@Model.infoZaposlenika.Prezime"><br/>
+    <label for="Broj_telefona">Broj telefona:</label><br>
+    <input type="text" id="Broj_telefona" name="Broj_telefona" value="@Model.infoZaposlenika.Broj_telefona"><br/>
+    <label for="Adresa">Adresa:</label><br>
+    <input type="text" id="Adresa" name="Adresa" value="@Model.infoZaposlenika.Adresa"><br/>
+    <label for="Email">Email:</label><br>
+    <input type="text" id="Email" name="Email" value="@Model.infoZaposlenika.Email"><br/><br/>
+    @if (Model.successMessage.Length > 0)
+    {
+        <div class="alert alert-success alert-dismissible fade show " role="alert">
+            <strong>@Model.successMessage</strong>
+             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+    <input type="submit" value="Submit">
+</form>

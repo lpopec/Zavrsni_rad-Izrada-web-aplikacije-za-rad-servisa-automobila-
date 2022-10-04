@@ -1,0 +1,38 @@
+﻿@page
+@model Auto_Servis.Pages.Radni_nalozi.IspisRadnogNalogaModel
+@{
+    Layout = "_LayoutRadniNalog";
+}
+<h1>RADNI NALOG</h1>
+
+<p class="šifra_radnog_naloga">Šifra radnog naloga: @Model.infoNaloga.Šifra_radnog_naloga</p>
+
+<table class="tablica">
+    <thead>
+        <th class="tablica">Ime i prezime radnika:</th>
+        <th class="tablica">Broj šasije vozila:</th>
+        <th class="tablica">Model vozila:</th>
+        <th class="tablica">Predviđeno vrijeme izvršavanja:</th>
+    </thead>
+    <tbody>
+        <td class="tablica">@Model.infoNaloga.Ime_Prezime_Radnika</td>
+        <td class="tablica">@Model.infoNaloga.Broj_šasije</td>
+        <td class="tablica">@Model.infoNaloga.Model_vozila</td>
+        <td class="tablica">@Model.infoNaloga.Predviđeno_vrijeme</td>        
+    </tbody>
+</table>
+
+<div class="opis_naloga">
+    <h3>Opis radnog naloga:</h3>
+    <p id="opis">@Model.infoNaloga.Opis</p>
+</div>
+<div class="napomena">
+    <h3>Napomena</h3>
+    <p id="opis">@Model.infoNaloga.Napomena</p>
+</div>
+<div class="napomena">
+    <h3>Utrošeni materijal</h3>
+    <p id="opis">@Model.infoNaloga.Materijal</p>
+</div>
+
+<input type=button name="ispis" id="GumbZaIspis" value="Ispis" onclick="window.print()">
